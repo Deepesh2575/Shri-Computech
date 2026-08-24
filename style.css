@@ -873,7 +873,10 @@ h1, h2, h3, h4, h5, h6 {
     .floating-whatsapp {
         display: none;
     }
-    
+    .navbar {
+        border-bottom: none; /* Seamless integration with icon nav */
+    }
+
     /* Mobile Top Icon Navigation Styles */
     .mobile-bottom-nav {
         display: flex;
@@ -890,7 +893,7 @@ h1, h2, h3, h4, h5, h6 {
         border-bottom: 1px solid var(--glass-border);
         padding: 0.8rem 0;
         z-index: 99; /* Just below navbar's 100 */
-        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     }
     
     .mobile-bottom-nav .nav-item {
@@ -915,8 +918,28 @@ h1, h2, h3, h4, h5, h6 {
         color: var(--accent-magenta-light);
     }
     
-    /* Push hero section down so it's not hidden by the double header */
+    /* Push hero section down further */
     .hero {
-        padding-top: 150px;
+        padding-top: 180px;
+    }
+
+    /* Improve typography & spacing */
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Make buttons full width on mobile for easier tapping */
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
     }
 }
