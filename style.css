@@ -787,6 +787,10 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
     transform: translate(0);
 }
+/* Mobile Bottom Nav (hidden by default) */
+.mobile-bottom-nav {
+    display: none;
+}
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
@@ -852,10 +856,49 @@ h1, h2, h3, h4, h5, h6 {
     }
     .cta-banner { padding: 4rem 1.5rem; }
     .floating-whatsapp {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 1.6rem;
+        display: none;
+    }
+    
+    /* Mobile Bottom Navigation Styles */
+    .mobile-bottom-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(13, 8, 18, 0.98);
+        backdrop-filter: blur(16px);
+        border-top: 1px solid var(--glass-border);
+        padding: 0.8rem 0 1.2rem;
+        z-index: 100;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+    }
+    
+    .mobile-bottom-nav .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+    }
+    
+    .mobile-bottom-nav .nav-item i {
+        font-size: 1.2rem;
+    }
+    
+    .mobile-bottom-nav .nav-item.nav-item-call {
+        color: var(--accent-gold);
+    }
+    
+    .mobile-bottom-nav .nav-item:hover,
+    .mobile-bottom-nav .nav-item:active {
+        color: var(--accent-magenta-light);
+    }
+    
+    .footer {
+        padding-bottom: 6rem;
     }
 }
