@@ -6,27 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburger) {
         hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
-            
-            // Toggle hamburger icon between bars and xmark
-            const icon = hamburger.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
         });
     }
 
     // Close mobile menu when a link is clicked
     navLinksItems.forEach(link => {
         link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
             navLinks.classList.remove('active');
-            const icon = hamburger.querySelector('i');
-            icon.classList.remove('fa-xmark');
-            icon.classList.add('fa-bars');
         });
     });
 

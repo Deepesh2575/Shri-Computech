@@ -268,10 +268,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .hamburger {
     display: none;
-    font-size: 1.5rem;
     cursor: pointer;
     z-index: 101;
+    padding: 0.5rem;
 }
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-primary);
+    transition: var(--transition);
+    border-radius: 3px;
+}
+
+/* Hamburger Animations */
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* --- 2. Hero Section --- */
 .hero {
