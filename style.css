@@ -915,13 +915,19 @@ h1, h2, h3, h4, h5, h6 {
     }
     .stats-row {
         justify-content: center;
+        justify-items: center;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.8rem;
     }
+    .stat-badge {
+        justify-content: center;
+        width: 100%;
+    }
     .stat-badge:nth-child(3) {
         grid-column: span 2;
         justify-content: center;
+        width: auto;
     }
     .hero-actions {
         justify-content: center;
