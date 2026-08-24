@@ -989,26 +989,35 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
     .navbar {
-        border-bottom: none; /* Seamless integration with icon nav */
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid var(--glass-border);
+    }
+    .logo-mark {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+    }
+    .logo-text {
+        font-size: 1.1rem;
     }
 
-    /* Mobile Top Icon Navigation Styles */
+    /* Mobile Bottom App Navigation Styles */
     .mobile-bottom-nav {
         display: flex;
         justify-content: space-around;
         align-items: center;
         position: fixed;
-        top: 72px; /* Directly under the main navbar */
-        bottom: auto;
+        bottom: 0; /* Placed at bottom for native app feel */
+        top: auto;
         left: 0;
         width: 100%;
         background: rgba(13, 8, 18, 0.98);
         backdrop-filter: blur(16px);
-        border-top: none;
-        border-bottom: 1px solid var(--glass-border);
-        padding: 0.8rem 0;
-        z-index: 99; /* Just below navbar's 100 */
-        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        border-top: 1px solid var(--glass-border);
+        border-bottom: none;
+        padding: 0.5rem 0 1rem 0; /* Extra padding at bottom for phone safe-areas */
+        z-index: 100;
+        box-shadow: 0 -10px 20px rgba(0,0,0,0.4);
     }
     
     .mobile-bottom-nav .nav-item {
@@ -1033,9 +1042,10 @@ h1, h2, h3, h4, h5, h6 {
         color: var(--accent-magenta-light);
     }
     
-    /* Push hero section down further */
+    /* Push hero section down for thinner navbar, but add bottom padding for tab bar */
     .hero {
-        padding-top: 180px;
+        padding-top: 100px;
+        padding-bottom: 80px; /* Space for the bottom nav */
     }
 
     /* Improve typography & spacing */
