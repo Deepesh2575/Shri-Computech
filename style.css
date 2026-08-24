@@ -909,6 +909,9 @@ h1, h2, h3, h4, h5, h6 {
     }
     .hero-content, .about-content {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .hero-subtitle {
         margin: 0 auto 2rem;
@@ -1044,13 +1047,13 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     /* Make buttons full width on mobile for easier tapping */
-    .hero-cta {
+    .hero-actions {
         flex-direction: column;
         width: 100%;
         padding: 0 1rem;
         gap: 1rem;
     }
-    .hero-cta .btn {
+    .hero-actions .btn {
         width: 100%;
         justify-content: center;
     }
