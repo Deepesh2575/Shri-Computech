@@ -1,0 +1,22 @@
+{
+  "name": "shri-computech-sales-and-services",
+  "version": "1.0.0",
+  "description": "Shri Computech Sales & Service - Computer, Laptop & CCTV in Bhilai",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve . -l 3000",
+    "start": "npx -y serve . -l 3000",
+    "serve": "npx -y serve . -l 3000"
+  },
+  "keywords": [
+    "computer",
+    "sales",
+    "service",
+    "bhilai",
+    "cctv",
+    "laptop",
+    "repair"
+  ],
+  "author": "Shri Computech",
+  "license": "ISC"
+}

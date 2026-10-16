@@ -34,8 +34,8 @@
             <nav class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#services">Services</a>
+                <a href="#products">Products & Prices</a>
                 <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
             </nav>
             
@@ -210,42 +210,75 @@
         </div>
     </section>
 
-    <!-- 5. Gallery Section -->
-    <section id="gallery" class="gallery section">
+    <!-- 5. Products & Accessories Section -->
+    <section id="products" class="products-section section">
         <div class="container">
             <div class="section-header animate-fade-in-up">
-                <h2>Products & Accessories</h2>
-                <p>Explore what we offer</p>
+                <div class="eyebrow" style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;"><i class="fa-solid fa-store"></i> Shop Inventory & Price List</div>
+                <h2>Our Products & Pricing</h2>
+                <p>Browse genuine computer parts, networking hardware, webcams, keyboards, power banks & accessories at wholesale & retail rates.</p>
             </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item animate-fade-in-up">
-                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Computers & Accessories">
-                    <div class="gallery-overlay">
-                        <h3>Computers & Accessories</h3>
+
+            <!-- Controls: Search & Category Filter Pills -->
+            <div class="catalog-header-bar animate-fade-in-up">
+                <div class="catalog-search-row">
+                    <div class="search-box-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="productSearchInput" class="search-input" placeholder="Search by name, brand (Logitech, TP-Link, Dell...)...">
+                    </div>
+                    
+                    <div class="catalog-sort-box">
+                        <label for="sortProducts"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort:</label>
+                        <select id="sortProducts" class="sort-select">
+                            <option value="default">Featured</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="name-asc">Name (A-Z)</option>
+                        </select>
                     </div>
                 </div>
-                <div class="gallery-item animate-fade-in-up" style="animation-delay: 0.1s;">
-                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Laptops">
-                    <div class="gallery-overlay">
-                        <h3>Laptops</h3>
-                    </div>
+
+                <div class="category-pills" id="categoryPills">
+                    <button class="cat-pill active" data-category="all"><i class="fa-solid fa-boxes-stacked"></i> All Products</button>
+                    <button class="cat-pill" data-category="Keyboards"><i class="fa-solid fa-keyboard"></i> Keyboards & Combos</button>
+                    <button class="cat-pill" data-category="Mice"><i class="fa-solid fa-mouse"></i> Mice</button>
+                    <button class="cat-pill" data-category="Networking"><i class="fa-solid fa-network-wired"></i> Networking & Wi-Fi</button>
+                    <button class="cat-pill" data-category="Cameras"><i class="fa-solid fa-video"></i> Webcams & Cameras</button>
+                    <button class="cat-pill" data-category="Storage"><i class="fa-solid fa-hard-drive"></i> Storage & Enclosures</button>
+                    <button class="cat-pill" data-category="Power & Chargers"><i class="fa-solid fa-bolt"></i> Chargers & Power</button>
+                    <button class="cat-pill" data-category="Cables & Adapters"><i class="fa-solid fa-plug"></i> Cables & Adapters</button>
+                    <button class="cat-pill" data-category="Audio"><i class="fa-solid fa-headphones"></i> Audio & Speakers</button>
                 </div>
-                <div class="gallery-item animate-fade-in-up" style="animation-delay: 0.2s;">
-                    <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Printers">
-                    <div class="gallery-overlay">
-                        <h3>Printers & Scanners</h3>
-                    </div>
-                </div>
-                <div class="gallery-item animate-fade-in-up" style="animation-delay: 0.3s;">
-                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CCTV Cameras">
-                    <div class="gallery-overlay">
-                        <h3>CCTV Security Systems</h3>
-                    </div>
-                </div>
+            </div>
+
+            <div class="products-count-bar">
+                <span id="productsCountText">Showing all products</span>
+                <a href="Product_Price_List.xlsx" class="excel-download-btn" download><i class="fa-solid fa-file-excel"></i> Download Excel Price List</a>
+            </div>
+
+            <!-- Products Dynamic Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Injected via JavaScript from products.js -->
             </div>
         </div>
     </section>
+
+    <!-- Product Image Lightbox Modal -->
+    <div class="image-lightbox-modal" id="imageModal">
+        <div class="modal-content-wrapper">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+            <div class="modal-img-holder">
+                <img id="modalImg" src="" alt="Product Image">
+            </div>
+            <div class="modal-info-holder">
+                <div>
+                    <h3 id="modalTitle">Product Title</h3>
+                    <p id="modalPrice">₹0</p>
+                </div>
+                <a id="modalWhatsAppBtn" href="#" target="_blank" class="btn btn-order-wa"><i class="fa-brands fa-whatsapp"></i> Buy on WhatsApp</a>
+            </div>
+        </div>
+    </div>
 
     <!-- 6. CTA Banner -->
     <section class="cta-banner section">
@@ -317,8 +350,8 @@
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#services">Services</a>
+                <a href="#products">Products</a>
                 <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
             </div>
             
@@ -343,13 +376,13 @@
             <i class="fa-solid fa-screwdriver-wrench"></i>
             <span>Services</span>
         </a>
+        <a href="#products" class="nav-item">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Products</span>
+        </a>
         <a href="tel:7000340148" class="nav-item nav-item-call">
             <i class="fa-solid fa-phone"></i>
             <span>Call</span>
-        </a>
-        <a href="#about" class="nav-item">
-            <i class="fa-solid fa-circle-info"></i>
-            <span>About</span>
         </a>
         <a href="https://wa.me/917000340148" class="nav-item">
             <i class="fa-brands fa-whatsapp"></i>
@@ -358,6 +391,7 @@
     </nav>
 
     <!-- Custom JS -->
+    <script src="products.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
